@@ -9,7 +9,7 @@ private int[] pri;
 		//   This will prevent a null pointer exception
 	pri = new int[0];
 	}
-	
+	 
 	//3. Complete the steps in the add method
 	public void add(int v) {
 		//A. create and initialize a new int array to be one 
