@@ -9,7 +9,7 @@ private int[] pri;
 		//   This will prevent a null pointer exception
 	pri = new int[0];
 	}
-	 
+	
 	//3. Complete the steps in the add method
 	public void add(int v) {
 		//A. create and initialize a new int array to be one 
@@ -25,13 +25,13 @@ private int[] pri;
 			arr[i] = pri[i];
 		}
 		//D. set the member array equal to the new array.
-		
+		pri = arr;
 	}
 	
 	//4. Complete the steps in the get method
 	public int get(int location) {
 		//A. Return the value of the member array at the location passed in
-		return 0;
+		return pri[location];
 	}
 	
 	//5. Run the DynamicArrayTest to see if you are correct so far.
@@ -41,26 +41,33 @@ private int[] pri;
 	public void set(int v, int location) {
 		//A. set the variable at the location passed in to the method
 		//   to the new value v
+		location = v;
 	}
 	
 	//7. Complete the steps in the insert method
 	public void insert(int v, int location) {
 		//A. create and initialize a new int array to be one 
 		//   element longer than the member array
-		
+		int arr[] = new int[pri.length + 1];
 		//B. Make a for loop that iterates through the new array
-
+for (int i = 0; i < arr.length; i++) {
 			//C. if i is less than location:
 		    //		set the element at i of the new array to the element at i of the member array
-			
+			if(i < location) {
+				arr[i] = pri[i];
+			}
 			//D. else if i is greater than location:
 		    //		set the element at i of the new array to the i - 1 element of the member array
-			
+			else if(i > location) {
+				arr[i] = pri[i - 1];
+			}
 			//E. else, set the element at i of the new array to the value v
-		
-		
+			else {
+				arr[i] = v;
+			}
+}
 		//F. set the member array equal to the new array
-	
+	pri = arr;
 	}
 	
 	//8. Run the tests again and check your progress
@@ -68,18 +75,26 @@ private int[] pri;
 	//9. Complete the steps in the remove method
 	public void remove(int location) {
 		//A. create a new array that is one element smaller than the member array
-		
+		int arr[] = new int[pri.length-1];
 		//B. make a for loop to iterate through the member array
-		
+		for (int i = 0; i < arr.length; i++) {
 			//C. if i  is less than location
 			//		set the element at i of the new array to the element at i of the member array
-			
-			//D. else if i  is greater than location
+			if(i<location) {
+				arr[i] = pri[i];
+			}
+			//D. else if i is greater than location
 			//		set the element at i - 1 of the new array to the element at i of the member array
-			
+			else if(i>location) {
+				arr[i - 1] = pri[i];
+			}
 			//E. else, continue;
-			
+			else {
+				continue;
+			}
+		}
 		//F. set the member array equal to the new array
+		pri = arr;
 	}
 	
 	//10. Run the tests again the see if you are correct so far
