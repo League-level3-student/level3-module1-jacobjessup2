@@ -41,7 +41,7 @@ private int[] pri;
 	public void set(int v, int location) {
 		//A. set the variable at the location passed in to the method
 		//   to the new value v
-		location = v;
+		pri[location] = v;
 	}
 	
 	//7. Complete the steps in the insert method
@@ -77,7 +77,7 @@ for (int i = 0; i < arr.length; i++) {
 		//A. create a new array that is one element smaller than the member array
 		int arr[] = new int[pri.length-1];
 		//B. make a for loop to iterate through the member array
-		for (int i = 0; i < arr.length; i++) {
+		for (int i = 0; i < pri.length; i++) {
 			//C. if i  is less than location
 			//		set the element at i of the new array to the element at i of the member array
 			if(i<location) {
@@ -101,12 +101,14 @@ for (int i = 0; i < arr.length; i++) {
 	
 	//11. Complete the size method so that it returns the length of the member array.
 	public int size() {
-		return 0;
+		return pri.length;
 	}
 	
 	//12. Complete the clear array so that it sets the member array 
 	//    equal to a new integer array of size 0
 	public void clear() {
+		int arr[] = new int[0];
+		pri = arr;
 	}
 	
 	//13. Run the test again to see if you are finished.
