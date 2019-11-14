@@ -35,6 +35,7 @@ public class _02_GuestBook implements ActionListener {
 	panel.add(view);
 	
 	frame.setVisible(true);
+	frame.setSize(200, 200);
 	add.addActionListener(this);
 	view.addActionListener(this);
 	list.add("Bob Banders");
@@ -53,7 +54,11 @@ public class _02_GuestBook implements ActionListener {
 		}
 		
 		if(ButtonPressed == view) {
-			
+			String view = "";
+			for (int i = 0; i < list.size(); i++) {
+			view += "Guest #" + (i+1) + " " + list.get(i) + "\n";
+			}
+			JOptionPane.showMessageDialog(null, view);
 		}
 	}
 	
