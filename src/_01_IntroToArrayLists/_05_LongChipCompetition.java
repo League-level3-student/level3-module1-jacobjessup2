@@ -16,7 +16,18 @@ public class _05_LongChipCompetition {
 
 	public static void main(String[] args) {
 		_05_LongChipCompetition lcc = new _05_LongChipCompetition();
-		
+		lcc.initializeBeatles();
+		double chipSize = 0;
+		String currentHighest = "";
+		for (int i = 0; i < lcc.getTheBand().size(); i++) {
+			for (int j = 0; j < lcc.getTheBand().get(i).getChips().size(); j++) {
+				if(lcc.getTheBand().get(i).getChips().get(j).getLength() > chipSize) {
+					chipSize = lcc.getTheBand().get(i).getChips().get(j).getLength();
+					currentHighest = lcc.getTheBand().get(i).getName();
+				}
+			}
+		}
+		System.out.println(currentHighest + " is has the largest chip at " +chipSize);
 	}
 	
 	private void initializeBeatles() {

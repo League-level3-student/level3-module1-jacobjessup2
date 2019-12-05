@@ -32,7 +32,7 @@ public class _04_RemovingStuffFromArrayLists {
 		stuffIFoundInTheYard.add(new Worm());
 		stuffIFoundInTheYard.add(new Dirt());
 
-		System.out.println(stuffIFoundInTheYard.size());
+		
 
 		/* TODO 1: Clean out the dirt but keep the delicious worms. */
 		
