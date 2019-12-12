@@ -75,7 +75,7 @@ public class _06_IPodShuffle implements ActionListener{
 		if(ButtonPressed == shuffle) {
 			songs.get(rand.nextInt(songs.size())).play();
 		}
-	}
+	} 
 	
 	
 	
