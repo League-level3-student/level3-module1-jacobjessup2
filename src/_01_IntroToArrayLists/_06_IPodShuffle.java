@@ -34,6 +34,7 @@ public class _06_IPodShuffle implements ActionListener{
 	
 	JFrame frame = new JFrame("IPod");
 	JPanel panel = new JPanel();
+	JLabel currentSong = new JLabel();
 	JButton shuffle = new JButton("Shuffle");
 	JButton play = new JButton("Play");
 	JButton stop = new JButton("Stop");
@@ -43,12 +44,13 @@ public class _06_IPodShuffle implements ActionListener{
 	
 	
 	void Start() {
-		
 		frame.setVisible(true);
+		frame.setSize(200,200);
 		frame.add(panel);
 		panel.add(play);
 		panel.add(stop);
 		panel.add(shuffle);
+		panel.add(currentSong);
 		play.addActionListener(this);
 		stop.addActionListener(this);
 		shuffle.addActionListener(this);
@@ -73,6 +75,9 @@ public class _06_IPodShuffle implements ActionListener{
 		}
 		
 		if(ButtonPressed == shuffle) {
+			for (int i = 0; i < songs.size(); i++) {
+				songs.get(i).stop();
+			}
 			songs.get(rand.nextInt(songs.size())).play();
 		}
 	} 
