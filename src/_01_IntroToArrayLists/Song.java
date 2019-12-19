@@ -8,7 +8,7 @@ import java.net.URL;
 import javazoom.jl.player.advanced.AdvancedPlayer;
 
 public class Song {
-	private int duration;
+	public int duration;
 	private String songAddress;
 	private AdvancedPlayer mp3Player;
 	private InputStream songStream;

@@ -2,10 +2,11 @@ package _02_Integer_Stack;
 
 public class IntegerStack {
 	//1. create a private array of integers
-	
+	private int[] array;
 	//2. complete the constructor by initializing the member array
 	//   to a new array of length 0. This prevents null pointer exceptions.
 	public IntegerStack() {
+		array = new int[0];
 	}
 	
 	//3. Complete the steps in the push method.

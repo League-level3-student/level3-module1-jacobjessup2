@@ -34,27 +34,30 @@ public class _06_IPodShuffle implements ActionListener{
 	
 	JFrame frame = new JFrame("IPod");
 	JPanel panel = new JPanel();
-	JLabel currentSong = new JLabel();
 	JButton shuffle = new JButton("Shuffle");
 	JButton play = new JButton("Play");
 	JButton stop = new JButton("Stop");
+	JLabel label = new JLabel();
 	ArrayList<Song> songs = new ArrayList<Song>();
 	Random rand = new Random();
 	int choosen = 0;
+	int random = 0;
 	
 	
 	void Start() {
 		frame.setVisible(true);
 		frame.setSize(200,200);
 		frame.add(panel);
+		panel.add(label);
 		panel.add(play);
 		panel.add(stop);
 		panel.add(shuffle);
-		panel.add(currentSong);
 		play.addActionListener(this);
 		stop.addActionListener(this);
+		label.setText(choosen + "");
 		shuffle.addActionListener(this);
 		songs.add(new Song ("demo.mp3"));
+		songs.add(new Song ("bensound-dubstep.mp3"));
 	}
 
 	@Override
@@ -78,9 +81,12 @@ public class _06_IPodShuffle implements ActionListener{
 			for (int i = 0; i < songs.size(); i++) {
 				songs.get(i).stop();
 			}
-			songs.get(rand.nextInt(songs.size())).play();
+			random = rand.nextInt(songs.size());
+			songs.get(random).play();
+			choosen = random;
+			label.setText(choosen + "");
 		}
-	} 
+	}
 	
 	
 	
