@@ -26,12 +26,11 @@ public class HangMan implements KeyListener{
 	void setup(){
 		frame.setVisible(true);
 		frame.addKeyListener(this);
-		frame.setSize(100,100);
+		frame.setSize(500,100);
 		frame.add(panel);
 		panel.add(label1);
 		panel.add(label2);
 		panel.add(label3);
-		
 	}
 	
 	void wordChoice() {
@@ -86,6 +85,7 @@ public class HangMan implements KeyListener{
 			display = "";
 			word = words.pop();
 			shownWord();
+			lives = 6;
 		}
 		
 	}
