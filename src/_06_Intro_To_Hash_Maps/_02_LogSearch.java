@@ -90,6 +90,14 @@ public class _02_LogSearch implements ActionListener {
 			}
 			JOptionPane.showMessageDialog(null, display);
 		 }
+		 
+		 
+		 //Button 4
+		 if(arg0.getSource() == button4) {
+			 String remove = JOptionPane.showInputDialog("Enter an ID number");
+			 int Remove = Integer.parseInt(remove);
+			 hash.remove(Remove);
+		 }
 	}
 	
 		
